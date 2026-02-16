@@ -1,0 +1,12 @@
+djangorestframework
+django-filter
+drf-yasg
+psycopg2-binary
+Pillow
+rest-framework-simplejwt
+gunicorn
+django-cors-headers
+Django>=4.0
+drf-spectacular
+django-filter
+djangorestframework-simplejwt

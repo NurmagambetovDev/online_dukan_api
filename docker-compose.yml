@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  # 1-xızmet: Maǵlıwmatlar bazası (PostgreSQL)
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=onlinedukan
+      - POSTGRES_USER=my_dukan_user
+      - POSTGRES_PASSWORD=123456
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # 2-xızmet: Bizdiń Django proektimiz
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db  # Settings.py daǵı os.environ.get('DB_HOST') usı jerden oqıydı
+
+volumes:
+  postgres_data:

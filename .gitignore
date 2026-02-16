@@ -1,0 +1,19 @@
+# Python kerek emes faylları
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual ortalıq 
+venv/
+env/
+.env
+
+# Maǵlıwmatlar bazası (lokal)
+db.sqlite3
+
+# IDE faylları (VS Code, PyCharm)
+.idea/
+.vscode/
+
+# Media fayllar (test súwretler GitHubqa kerek emes)
+media/
